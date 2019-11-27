@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <head>
+    
+    </head>
+
+    <body>
+        <h1>Welcome to matmul</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div>
+                <span>Matrix A:</span>
+                <textarea rows=6 cols=60 name="A">{{A}}</textarea>
+                <span>Matrix B:</span>
+                <textarea rows=6 cols=60 name="B">{{B}}</textarea>
+            </div>
+            <div>
+                <button type="submit">multiply</button>
+            </div>
+        </form>
+        <div>
+                <textarea rows=6 cols= 60 name="C">{{C}}</textarea>
+        </div>
+        <div style="text-align: center;">
+            <table border="1">
+                {% for r in C %}
+                <tr>
+                    {% for c in r %}
+                    <td>{{c}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div> 
+    </body>
+</html>
